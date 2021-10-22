@@ -1,0 +1,8 @@
+---
+# vars file for Ansible-Role-Mariadb
+
+mariadb_package: mariadb-server
+
+mariadb_requirement: python3-PyMYSQL
+
+mariadb_service: mariadb

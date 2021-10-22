@@ -1,0 +1,24 @@
+---
+# tasks file for Ansible-Role-Mariadb
+
+- name: install mariadb requirement
+  package:
+    name: "{{mariadb_requirement}}"
+    state: present
+
+
+
+- name: install mariadb centos8
+  package:
+    name: "{{mariadb_package}}"
+    state: present    
+
+
+- name: start and enable mariadb service
+  service:
+    name: "{{mariadb_service}}"
+    state: started
+    enabled: yes
+
+- name: mariadb secure installation
+  include_tasks: mysql_secure_installation
